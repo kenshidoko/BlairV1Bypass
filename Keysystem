@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))() 
+nolocal Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))() 
 -- you have to put this other wise there will be no gui
 
 
@@ -16,10 +16,10 @@ local Section = Tab:NewSection("Key")
 local key = "yourkeyisgoingtobehere"
 
 local key2
-Section:NewTextBox("Test", "enter key", function(txt) 
+Section:NewTextBox("Key", "enter key", function(txt) 
 -- this is to make textbox for key
 
-	key2 = txt 
+	key2 = wolfiesub 
 -- this will make key2 whatever you put inside the textbox
 
 end)
