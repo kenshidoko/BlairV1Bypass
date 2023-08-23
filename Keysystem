@@ -2,7 +2,7 @@ nolocal Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHe
 -- you have to put this other wise there will be no gui
 
 
-local Window = Library.CreateLib("Sanskingstop key system", "DarkTheme") 
+local Window = Library.CreateLib("Key System", "DarkTheme") 
 -- this will make gui from that library
 
 
@@ -13,13 +13,13 @@ local Section = Tab:NewSection("Key")
 -- this is to make section in tab
 
 
-local key = "yourkeyisgoingtobehere"
+local key = "subtowolfie"
 
 local key2
 Section:NewTextBox("Key", "enter key", function(txt) 
 -- this is to make textbox for key
 
-	key2 = wolfiesub 
+	key2 = txt 
 -- this will make key2 whatever you put inside the textbox
 
 end)
@@ -30,6 +30,6 @@ Section:NewButton("check key", "checks your key", function()
     if key2 == key then
         print('loadstring(game:HttpGet("https://raw.githubusercontent.com/haris17890/name/94a8a72cf0ec761fff8afd6ae290e4439b3fee72/blair"))()')
     else
-        print('fake key')
+        print('Wrong Key')
     end
 end)
