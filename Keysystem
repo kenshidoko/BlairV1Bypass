@@ -1,35 +1,45 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))() 
--- you have to put this other wise there will be no gui
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+local Window = Rayfield:CreateWindow({
+   Name = "Wolfies Blair Script |",
+   LoadingTitle = "Blair",
+   LoadingSubtitle = "by ItsActuallyWolfie",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Example Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Key | Youtube Hub",
+      Subtitle = "Key System",
+      Note = "Key In Discord Server",
+      FileName = "YoutubeHubKey1", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/AtgzSPWK"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
 
-local Window = Library.CreateLib("Key System", "DarkTheme") 
--- this will make gui from that library
+local MainTab = Window:CreateTab("Main", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
 
-
-local Tab = Window:NewTab("key system") 
--- this is to make tab in gui
-
-local Section = Tab:NewSection("Key") 
--- this is to make section in tab
-
-
-local key = "subtowolfie"
-
-local key2
-Section:NewTextBox("key", "enter key", function(txt) 
--- this is to make textbox for key
-
-	key2 = txt 
--- this will make key2 whatever you put inside the textbox
-
-end)
-
-Section:NewButton("check key", "checks your key", function() 
--- this button will check key
-
-    if key2 == key then
-        print('loadstring(game:HttpGet("https://raw.githubusercontent.com/haris17890/name/94a8a72cf0ec761fff8afd6ae290e4439b3fee72/blair"))()')
-    else
-        print('fake key')
-    end
-end)
+Rayfield:Notify({
+   Title = "You executed blair script",
+   Content = "Still not updated",
+   Duration = 5,
+   Image = 13047715178,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("loadstring(game:HttpGet("https://raw.githubusercontent.com/haris17890/name/94a8a72cf0ec761fff8afd6ae290e4439b3fee72/blair"))()")
+      end
+   },
+},
+})
